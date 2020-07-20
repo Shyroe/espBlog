@@ -9,6 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+import { Wrapper, Footer } from "../styles/styled"
+import GlobalStyles from "../styles/globalStyles"
 import Header from "./header"
 import "./layout.css"
 
@@ -25,21 +27,25 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <GlobalStyles />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
+      {/* <div
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          width: "100%",
+          maxWidth: "960px",
+          border: "2px solid green",
+          margin: "0 auto",
+          padding: "0 1.0875rem 1.45rem",
+          fontFamily: "Roboto sans-serif",
         }}
-      >
+      > */}
+      <Wrapper>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      </Wrapper>
+      <Footer>
+        © {new Date().getFullYear()}, Blog desenvolvido com Gatsby e ❤ !
+      </Footer>
+      {/* </div> */}
     </>
   )
 }
