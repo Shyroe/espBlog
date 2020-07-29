@@ -17,6 +17,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostSuggestion from "../components/PostSuggestion"
 import MailchimpForm from "../components/MailchimpForm.js"
+import Disqus from "../components/Disqus"
 // import DisqusWrapper from "../components/DisqusWrapper/index"
 // import
 
@@ -79,11 +80,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </Navigation>
-      {/* <DisqusWrapper
+      <Disqus
         post={post}
         title={post.frontmatter.title}
         slug={post.fields.slug}
-      /> */}
+      />
     </Layout>
   )
 }

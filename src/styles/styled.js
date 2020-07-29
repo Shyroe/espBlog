@@ -115,3 +115,6 @@ export const Navigation = styled.nav`
   justify-content: flex-start;
   /* border: 2px solid blue; */
 `
+export const DisqusWrapper = styled.footer`
+  margin-top: 3rem;
+`
