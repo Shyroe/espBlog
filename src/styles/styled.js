@@ -77,7 +77,41 @@ export const TagItem = styled.div`
 `
 
 export const TagNav = styled.nav`
-  margin: 20px 0;
+  /* margin: 20px 0; */
+  margin: ${props => (props.mini == true ? "20px 0" : "0px 0px")};
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
+`
+
+export const Container = styled.div`
+  width: auto;
+  height: auto;
+  margin-bottom: 40px;
+  padding: 30px;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    border: 3px solid #222;
+  }
+
+  & > h2 {
+    margin-top: 10px;
+  }
+`
+
+export const Date = styled.small`
+  font-weight: bold;
+  color: #999;
+`
+
+export const Navigation = styled.nav`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* margin: 20px 0; */
+  display: flex;
+  justify-content: flex-start;
+  /* border: 2px solid blue; */
 `

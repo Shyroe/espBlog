@@ -2,11 +2,21 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import _ from "lodash"
 import styled from "styled-components"
-import { StyledLink, TextLink, TagItem, TagNav } from "../styles/styled"
+import {
+  StyledLink,
+  TextLink,
+  TagItem,
+  TagNav,
+  Container,
+  Date,
+  // Navigation,
+} from "../styles/styled"
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PostSuggestion from "../components/PostSuggestion"
+import MailchimpForm from "../components/MailchimpForm.js"
 // import DisqusWrapper from "../components/DisqusWrapper/index"
 // import
 
@@ -49,20 +59,21 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <hr style={{}} />
         <footer>{/* <Bio /> */}</footer>
       </article>
+      <MailchimpForm />
 
       <Navigation>
         <ul>
           <li>
             {previous && (
               <StyledLink to={previous.fields.slug} rel="prev">
-                <TextLink>← {previous.frontmatter.title}</TextLink>
+                <PostSuggestion post={previous} />
               </StyledLink>
             )}
           </li>
           <li>
             {next && (
               <StyledLink to={next.fields.slug} rel="next">
-                <TextLink>{next.frontmatter.title} →</TextLink>
+                <PostSuggestion post={next} />
               </StyledLink>
             )}
           </li>
@@ -110,10 +121,16 @@ export const PostTitle = styled.h1``
 
 export const Navigation = styled.nav`
   & > ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     list-style: none;
-    padding: 0;
+
+    & > li {
+      width: 45%;
+    }
   }
 `

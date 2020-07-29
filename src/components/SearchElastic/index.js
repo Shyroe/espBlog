@@ -7,7 +7,8 @@ import BlogList from "../BlogList"
 import styled from "styled-components"
 import { StyledLink, TagItem, TagNav } from "../../styles/styled"
 import { Navigation, Container, Date } from "../BlogList/styled"
-
+import { format, parseISO } from "date-fns"
+import { ptBR } from "date-fns/locale"
 export default class Search extends Component {
   constructor(props) {
     super(props)
@@ -18,11 +19,34 @@ export default class Search extends Component {
     }
   }
 
+  formatDate(date) {
+    console.log("format date: ", date)
+    let onlyDate = date.substring(0, 10)
+    // console.log("onlyDate: ", onlyDate)
+    // console.log("onlyDate parseISO: ", parseISO(onlyDate))
+
+    let dateFormated = format(parseISO(onlyDate), "dd 'de' MMMM 'de' yyyy", {
+      locale: ptBR,
+    })
+
+    console.log("dateFormated: ", dateFormated)
+    return dateFormated
+
+    //Not Working
+    // const dateFormat = new Date("2020-03-15T00:00:01.000Z")
+    // const options = { year: "numeric", month: "long", day: "numeric" }
+    // let dateFormated = new Intl.DateTimeFormat("pt-BR", options).format(
+    //   dateFormat
+    // )
+    // console.log("dateFormated: ", dateFormated)
+    // return dateFormated
+  }
+
   renderPosts(page) {
     return (
       <StyledLink key={page.id} to={page.path}>
         <Container>
-          <Date>{page.date}</Date>
+          <Date>{this.formatDate(page.date)}</Date>
           <h2>{page.title}</h2>
           <p>{page.description}</p>
           <Navigation>
