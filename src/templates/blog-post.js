@@ -12,6 +12,8 @@ import {
   // Navigation,
 } from "../styles/styled"
 
+import V from "../styles/variables"
+
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -32,7 +34,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
+      <PostArticle>
         <h2>
           <StyledLink to={"/blog"}>
             <TextLink>Voltar ao Blog</TextLink>
@@ -59,7 +61,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr style={{}} />
         <footer>{/* <Bio /> */}</footer>
-      </article>
+      </PostArticle>
       <MailchimpForm />
 
       <Navigation>
@@ -115,6 +117,13 @@ export const pageQuery = graphql`
   }
 `
 
+export const PostArticle = styled.article`
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
+  font-family: Roboto, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.4;
+`
 export const PostDate = styled.p`
   margin-top: 10px;
 `
@@ -130,8 +139,24 @@ export const Navigation = styled.nav`
     justify-content: space-between;
     list-style: none;
 
+    @media only screen and (max-width: ${V.breakpoints.medium}) {
+      flex-direction: column;
+    }
+
+    @media only screen and (max-width: ${V.breakpoints.small}) {
+      flex-direction: column;
+    }
+
     & > li {
       width: 45%;
+
+      @media only screen and (max-width: ${V.breakpoints.medium}) {
+        width: 90%;
+      }
+
+      @media only screen and (max-width: ${V.breakpoints.small}) {
+        width: 90%;
+      }
     }
   }
 `

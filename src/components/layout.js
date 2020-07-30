@@ -29,23 +29,12 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyles />
       <Header siteTitle={data.site.siteMetadata.title} />
-      {/* <div
-        style={{
-          width: "100%",
-          maxWidth: "960px",
-          border: "2px solid green",
-          margin: "0 auto",
-          padding: "0 1.0875rem 1.45rem",
-          fontFamily: "Roboto sans-serif",
-        }}
-      > */}
       <Wrapper>
         <main>{children}</main>
       </Wrapper>
       <Footer>
         © {new Date().getFullYear()}, Blog desenvolvido com Gatsby e ❤ !
       </Footer>
-      {/* </div> */}
     </>
   )
 }

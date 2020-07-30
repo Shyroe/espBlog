@@ -5,8 +5,14 @@ import { Index } from "elasticlunr"
 import { Link } from "gatsby"
 import BlogList from "../BlogList"
 import styled from "styled-components"
-import { StyledLink, TagItem, TagNav } from "../../styles/styled"
-import { Navigation, Container, Date } from "../BlogList/styled"
+import {
+  StyledLink,
+  TagItem,
+  TagNav,
+  Container,
+  Date,
+} from "../../styles/styled"
+// import { Navigation, Container, Date } from "../BlogList/styled"
 import { format, parseISO } from "date-fns"
 import { ptBR } from "date-fns/locale"
 export default class Search extends Component {
@@ -49,7 +55,7 @@ export default class Search extends Component {
           <Date>{this.formatDate(page.date)}</Date>
           <h2>{page.title}</h2>
           <p>{page.description}</p>
-          <Navigation>
+          <TagNav>
             <>
               {page.tags.map((tag, index) => (
                 <ul key={index}>
@@ -57,7 +63,7 @@ export default class Search extends Component {
                 </ul>
               ))}
             </>
-          </Navigation>
+          </TagNav>
         </Container>
       </StyledLink>
     )

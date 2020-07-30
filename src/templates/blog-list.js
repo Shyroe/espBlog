@@ -75,30 +75,3 @@ export const blogListQuery = graphql`
 `
 
 export default BlogListTemplate
-
-//OK - Graphql only
-// export const BlogListQuery = graphql`
-//   query BlogListQuery {
-//     allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
-//       edges {
-//         node {
-//           frontmatter {
-//             title
-//             description
-//             date
-//           }
-
-//           fields {
-//             slug
-//           }
-//           timeToRead
-//         }
-//       }
-//     }
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `

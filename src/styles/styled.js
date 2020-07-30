@@ -7,8 +7,13 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 1.0875rem 1.45rem;
   /* border: 2px solid green; */
-  font-family: Roboto sans-serif;
-  font-size: 22px;
+  /* font-family: Roboto sans-serif; */
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+
+  & > main {
+    font-family: Roboto, sans-serif;
+  }
 `
 
 export const Footer = styled.div`
@@ -112,6 +117,7 @@ export const Navigation = styled.nav`
   padding: 0;
   /* margin: 20px 0; */
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   /* border: 2px solid blue; */
 `

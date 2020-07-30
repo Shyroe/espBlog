@@ -1,12 +1,12 @@
 import React from "react"
 
 import { ThemeProvider } from "styled-components"
-import defaultTheme from "../src/styles/themes/defaultTheme"
+import lightTheme from "../src/styles/themes/lightTheme"
 
 export function wrapRootElement({ element }) {
   return (
     <React.Fragment>
-      <ThemeProvider theme={defaultTheme}>{element}</ThemeProvider>
+      <ThemeProvider theme={lightTheme}>{element}</ThemeProvider>
     </React.Fragment>
   )
 }
