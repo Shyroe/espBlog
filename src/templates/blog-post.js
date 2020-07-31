@@ -121,7 +121,7 @@ export const PostArticle = styled.article`
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
   font-family: Roboto, sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   line-height: 1.4;
 `
 export const PostDate = styled.p`

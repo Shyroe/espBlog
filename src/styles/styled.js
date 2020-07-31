@@ -6,10 +6,7 @@ export const Wrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
   padding: 0 1.0875rem 1.45rem;
-  /* border: 2px solid green; */
-  /* font-family: Roboto sans-serif; */
   font-family: Roboto, sans-serif;
-  font-size: 24px;
 
   & > main {
     font-family: Roboto, sans-serif;

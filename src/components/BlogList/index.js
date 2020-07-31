@@ -8,7 +8,7 @@ import {
   Date,
 } from "../../styles/styled"
 const BlogList = ({ blogList }) => {
-  console.log("blogList component data: ", blogList)
+  // console.log("blogList component data: ", blogList)
   return (
     <>
       {blogList.map(({ node }) => (

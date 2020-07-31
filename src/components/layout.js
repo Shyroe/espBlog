@@ -29,12 +29,14 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyles />
       <Header siteTitle={data.site.siteMetadata.title} />
+      {/* <SearchQueryContext.Consumer> */}
       <Wrapper>
         <main>{children}</main>
       </Wrapper>
       <Footer>
         © {new Date().getFullYear()}, Blog desenvolvido com Gatsby e ❤ !
       </Footer>
+      {/* </SearchQueryContext.Consumer> */}
     </>
   )
 }

@@ -14,6 +14,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const blogList = path.resolve("./src/templates/blog-list.js")
+  const blogTag = path.resolve("./src/templates/blog-tag.js")
   return graphql(
     `
       {
@@ -33,6 +34,11 @@ exports.createPages = ({ graphql, actions }) => {
                 tags
               }
             }
+          }
+        }
+        tagsGroup: allMarkdownRemark(limit: 2000) {
+          group(field: frontmatter___tags) {
+            fieldValue
           }
         }
       }
@@ -80,6 +86,19 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
       console.log("Passouu depois de pagination")
+
+      //blog-Tag
+      const tags = result.data.tagsGroup.group
+
+      tags.forEach(tag => {
+        createPage({
+          path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+          component: blogTag,
+          context: {
+            tag: tag.fieldValue,
+          },
+        })
+      })
     })
     .catch(err => console.log(err))
 }
