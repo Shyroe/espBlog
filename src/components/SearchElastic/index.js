@@ -1,5 +1,5 @@
 // Class Component Funcionando
-import React, { Component } from "react"
+import React, { Component, useContext } from "react"
 
 import { Index } from "elasticlunr"
 import { Link } from "gatsby"
@@ -12,10 +12,11 @@ import {
   Container,
   Date,
 } from "../../styles/styled"
-// import { Navigation, Container, Date } from "../BlogList/styled"
+import { SearchQueryContext } from "../../contexts/SearchQuery"
 import { format, parseISO } from "date-fns"
 import { ptBR } from "date-fns/locale"
 export default class Search extends Component {
+  // const {  } = useContext(SearchQueryContext)
   constructor(props) {
     super(props)
     this.state = {
